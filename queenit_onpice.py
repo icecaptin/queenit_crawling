@@ -27,10 +27,10 @@ class QueenitCrawling:
         except NoSuchElementException:
             print("앱 다음에 받기 버튼을 찾지 못함ㅠ")
 
-        # 상의 클릭
-        upper_button = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div/div/div[5]/div[1]/div")
+        # 원피스 클릭
+        upper_button = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div/div/div[5]/div[2]/div")
         driver.execute_script("arguments[0].click();", upper_button)
-        print("상의 클릭.")
+        print("원피스 클릭.")
         time.sleep(10)
 
 
@@ -92,7 +92,7 @@ class QueenitCrawling:
             
 
         # CSV 파일로 상품 정보 저장
-        csv_path = os.path.join(path, 'queenit_crawl.csv')
+        csv_path = os.path.join(path, 'queenit_crawl_onpice.csv')
         with open(csv_path, 'w', newline='', encoding='cp949') as csvfile:
             fieldnames = ['Name', 'Price', 'Rating', 'ImageURL']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
